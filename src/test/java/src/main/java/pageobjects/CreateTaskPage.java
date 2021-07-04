@@ -1,4 +1,4 @@
-package src.main.java;
+package src.main.java.pageobjects;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
