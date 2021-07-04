@@ -1,8 +1,8 @@
 package src.test.java;
 
 import org.testng.annotations.Test;
-import src.main.java.CreateTaskPage;
-import src.main.java.TasksListPage;
+import src.main.java.pageobjects.CreateTaskPage;
+import src.main.java.pageobjects.TasksListPage;
 
 import java.net.MalformedURLException;
 
