@@ -7,7 +7,7 @@
     <groupId>org.example</groupId>
     <artifactId>tau-mobile-automation-java</artifactId>
     <version>1.0-SNAPSHOT</version>
-<!--    Command to run in terminal : mvn clean test -Pandroid-->
+    <!--    Command to run in terminal : mvn clean test -Pandroid-->
 
     <build>
         <plugins>
@@ -44,25 +44,45 @@
             <artifactId>json-simple</artifactId>
             <version>1.1.1</version>
         </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>6.9.1</version>
+        </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-core</artifactId>
+            <version>6.9.1</version>
+        </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-testng</artifactId>
+            <version>6.9.1</version>
+        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>io.cucumber</groupId>-->
+<!--            <artifactId>gherkin</artifactId>-->
+<!--            <version>17.0.2</version>-->
+<!--        </dependency>-->
     </dependencies>
     <profiles>
-<!--        <profile>-->
-<!--            <id>iOS</id>-->
-<!--            <build>-->
-<!--                <plugins>-->
-<!--                    <plugin>-->
-<!--                        <groupId>org.apache.maven.plugins</groupId>-->
-<!--                        <artifactId>maven-surefire-plugin</artifactId>-->
-<!--                        <version>2.21.0</version>-->
-<!--                        <configuration>-->
-<!--                            <suiteXmlFiles>-->
-<!--                                <suiteXmlFile>iOS_testng.xml</suiteXmlFile>-->
-<!--                            </suiteXmlFiles>-->
-<!--                        </configuration>-->
-<!--                    </plugin>-->
-<!--                </plugins>-->
-<!--            </build>-->
-<!--        </profile>-->
+        <!--        <profile>-->
+        <!--            <id>iOS</id>-->
+        <!--            <build>-->
+        <!--                <plugins>-->
+        <!--                    <plugin>-->
+        <!--                        <groupId>org.apache.maven.plugins</groupId>-->
+        <!--                        <artifactId>maven-surefire-plugin</artifactId>-->
+        <!--                        <version>2.21.0</version>-->
+        <!--                        <configuration>-->
+        <!--                            <suiteXmlFiles>-->
+        <!--                                <suiteXmlFile>iOS_testng.xml</suiteXmlFile>-->
+        <!--                            </suiteXmlFiles>-->
+        <!--                        </configuration>-->
+        <!--                    </plugin>-->
+        <!--                </plugins>-->
+        <!--            </build>-->
+        <!--        </profile>-->
         <profile>
             <id>android</id>
             <build>

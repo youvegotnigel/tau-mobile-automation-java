@@ -1,4 +1,4 @@
-package src.main.java.utils;
+package chapter_7_page_object_model.src.main.java.utils;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
