@@ -60,8 +60,31 @@ public class SauceLabs {
         click(login_btn);
         delay(10000);
         click(login_btn);
-        delay(50000);
+        delay(30000);
         Assert.assertTrue(getIosDriver().findElementByAccessibilityId("AS").isDisplayed());
+        delay(10000);
+
+        //Pre Steps
+        clickByAccessibilityId("Cherry Orchard - PSW B-Day");
+        clickByAccessibilityId("PSW B-Day");
+        clickByAccessibilityId("Close");
+
+        //Steps
+        clickByAccessibilityId("Tap to Select Shift Assignments");
+        clickByAccessibilityId("PSW");
+        clickByAccessibilityId("Day");
+        clickByAccessibilityId("Cherry Orchard");
+        clickByAccessibilityId("PSW B-Day");
+        clickByAccessibilityId("Close");
+
+        //Assertions
+        Assert.assertTrue(isDisplayedByAccessibilityId("Hubbard, Bruce (I5BEZDQJQY)"));
+        Assert.assertTrue(isDisplayedByAccessibilityId("Steele, Domingo (JVF7PQHWAT)"));
+
+        //Closing Steps
+        clickByAccessibilityId("Cherry Orchard - PSW B-Day");
+        clickByAccessibilityId("PSW B-Day");
+        clickByAccessibilityId("Close");
     }
 
     @AfterMethod
@@ -74,10 +97,6 @@ public class SauceLabs {
         return iOSDriver.get();
     }
 
-    public WebElement getWebElementByByAccessibilityId(String id){
-        return (WebElement) getIosDriver().findElementByAccessibilityId(id);
-    }
-
     public void waitForVisibility(By by) {
         IOSDriver driver = getIosDriver();
         try {
@@ -88,10 +107,28 @@ public class SauceLabs {
         }
     }
 
+    public void waitForVisibilityByAccessibilityId(String id) {
+        IOSDriver driver = getIosDriver();
+        try {
+            WebDriverWait wait = new WebDriverWait(driver, WAIT);
+            wait.until(ExpectedConditions.visibilityOf(driver.findElementByAccessibilityId(id)));
+        }catch (Exception e){
+            System.out.println("Element not found ::: " + id);
+        }
+    }
+
     public void click(By by) {
         IOSDriver driver = getIosDriver();
         waitForVisibility(by);
         driver.findElement(by).click();
+    }
+
+    public void clickByAccessibilityId(String id) {
+        IOSDriver driver = getIosDriver();
+        waitForVisibilityByAccessibilityId(id);
+        driver.findElementByAccessibilityId(id).click();
+        System.out.println("Element clicked on ::: "+ id);
+        delay(10000);
     }
 
     public void setCheckBox(By by) {
@@ -119,6 +156,16 @@ public class SauceLabs {
             return  driver.findElement(by).isDisplayed();
         }catch (NoSuchElementException e){
             System.out.println("Element not found ::: " + by);
+            return false;
+        }
+    }
+
+    public boolean isDisplayedByAccessibilityId(String id){
+        IOSDriver driver = getIosDriver();
+        try {
+            return  driver.findElementByAccessibilityId(id).isDisplayed();
+        }catch (NoSuchElementException e){
+            System.out.println("Element not found by AccessibilityId::: " + id);
             return false;
         }
     }
