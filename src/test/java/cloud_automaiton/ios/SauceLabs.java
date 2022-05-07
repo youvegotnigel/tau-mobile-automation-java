@@ -65,9 +65,9 @@ public class SauceLabs {
         delay(10000);
 
         //Pre Steps
-        clickByAccessibilityId("Cherry Orchard - PSW B-Day");
-        clickByAccessibilityId("PSW B-Day");
-        clickByAccessibilityId("Close");
+//        clickByAccessibilityId("Cherry Orchard - PSW B-Day");
+//        clickByAccessibilityId("PSW B-Day");
+//        clickByAccessibilityId("Close");
 
         //Steps
         clickByAccessibilityId("Tap to Select Shift Assignments");
